@@ -44,8 +44,7 @@ interface YouTubeResponse {
 export class SearchVideosHandler implements IQueryHandler<SearchVideosQuery> {
   async execute(query: SearchVideosQuery): Promise<VideoSearchResponseModel> {
     const { query: searchTerm, pageToken, maxResults = 10 } = query;
-    const apiKey = 'AIzaSyBdZPM2wiEGkXJGk7SMyYbTmiFGNs_IQXw';
-
+    const apiKey = process.env.YOUTUBE_API_KEY;
     if (!apiKey) {
       throw new Error('YouTube API key is not configured');
     }

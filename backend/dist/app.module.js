@@ -15,6 +15,7 @@ const mikro_orm_config_1 = require("./mikro-orm.config");
 const cqrs_1 = require("@nestjs/cqrs");
 const apollo_1 = require("@nestjs/apollo");
 const history_module_1 = require("./modules/history/history.module");
+const config_1 = require("@nestjs/config");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -22,6 +23,10 @@ exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             cqrs_1.CqrsModule.forRoot(),
+            config_1.ConfigModule.forRoot({
+                isGlobal: true,
+                envFilePath: '.env',
+            }),
             graphql_1.GraphQLModule.forRoot({
                 driver: apollo_1.ApolloDriver,
                 autoSchemaFile: true,

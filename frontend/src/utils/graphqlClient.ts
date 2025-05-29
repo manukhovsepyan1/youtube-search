@@ -1,3 +1,3 @@
 import { GraphQLClient } from 'graphql-request';
-
-export const client = new GraphQLClient('http://localhost:3000/graphql');
+const url = import.meta.env.VITE_BACK_URL;
+export const client = new GraphQLClient(url);

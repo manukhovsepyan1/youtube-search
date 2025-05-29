@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetHistoryHandler = void 0;
 const cqrs_1 = require("@nestjs/cqrs");
@@ -35,6 +34,6 @@ exports.GetHistoryHandler = GetHistoryHandler;
 exports.GetHistoryHandler = GetHistoryHandler = __decorate([
     (0, cqrs_1.QueryHandler)(get_history_query_1.GetHistoryQuery),
     __param(0, (0, nestjs_1.InjectRepository)(history_entity_1.History)),
-    __metadata("design:paramtypes", [typeof (_a = typeof core_1.EntityRepository !== "undefined" && core_1.EntityRepository) === "function" ? _a : Object])
+    __metadata("design:paramtypes", [core_1.EntityRepository])
 ], GetHistoryHandler);
 //# sourceMappingURL=get-history.handler.js.map

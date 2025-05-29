@@ -13,7 +13,7 @@ const get_youtube_video_query_1 = require("../queries/get-youtube-video.query");
 let GetYouTubeVideoHandler = class GetYouTubeVideoHandler {
     async execute(query) {
         const { videoId } = query;
-        const apiKey = 'AIzaSyBdZPM2wiEGkXJGk7SMyYbTmiFGNs_IQXw';
+        const apiKey = process.env.YOUTUBE_API_KEY;
         const url = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${apiKey}&part=snippet,statistics`;
         const response = await axios_1.default.get(url);
         const { items } = response.data;

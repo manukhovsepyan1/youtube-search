@@ -13,7 +13,7 @@ const axios_1 = require("axios");
 let SearchVideosHandler = class SearchVideosHandler {
     async execute(query) {
         const { query: searchTerm, pageToken, maxResults = 10 } = query;
-        const apiKey = 'AIzaSyBdZPM2wiEGkXJGk7SMyYbTmiFGNs_IQXw';
+        const apiKey = process.env.YOUTUBE_API_KEY;
         if (!apiKey) {
             throw new Error('YouTube API key is not configured');
         }

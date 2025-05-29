@@ -9,7 +9,7 @@ export class GetYouTubeVideoHandler
 {
   async execute(query: GetYouTubeVideoQuery): Promise<VideoDetailsModel> {
     const { videoId } = query;
-    const apiKey = 'AIzaSyBdZPM2wiEGkXJGk7SMyYbTmiFGNs_IQXw';
+    const apiKey = process.env.YOUTUBE_API_KEY;
     const url = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${apiKey}&part=snippet,statistics`;
 
     const response = await axios.get(url);
